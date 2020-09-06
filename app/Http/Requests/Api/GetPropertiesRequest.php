@@ -39,25 +39,25 @@ class GetPropertiesRequest extends FormRequest
     }
 
     if ($this->query->has('bedrooms')) {
-      $query->where('bedrooms', (int) $this->query('bedrooms'));
+      $query->where('bedrooms', (int)$this->query('bedrooms'));
     }
 
     if ($this->query->has('bathrooms')) {
-      $query->where('bathrooms', (int) $this->query('bathrooms'));
+      $query->where('bathrooms', (int)$this->query('bathrooms'));
     }
 
     if ($this->query->has('storeys')) {
-      $query->where('storeys', (int) $this->query('storeys'));
+      $query->where('storeys', (int)$this->query('storeys'));
     }
 
     if ($this->query->has('garages')) {
-      $query->where('garages', (int) $this->query('garages'));
+      $query->where('garages', (int)$this->query('garages'));
     }
 
     if ($this->query->has('price_from') && $this->query->has('price_to')) {
       $query->whereBetween('price', [
-        $this->query('price_from'),
-        $this->query('price_to'),
+        (int)$this->query('price_from'),
+        (int)$this->query('price_to'),
       ]);
     }
 
